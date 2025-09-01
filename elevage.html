@@ -152,6 +152,66 @@
             box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
         }
 
+        /* Menu Mobile */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--cream);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 26, 26, 0.98);
+            z-index: 1001;
+            padding: 2rem;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--cream);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1002;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .mobile-menu a {
+            color: var(--cream);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover, .mobile-menu a.active {
+            color: var(--gold);
+        }
+
         /* Hero Section */
         .hero {
             height: 70vh;
@@ -163,7 +223,7 @@
             justify-content: center;
             text-align: center;
             color: var(--cream);
-            margin-top: 80px;
+            padding-top: 120px; /* Espace pour le header fixe */
         }
 
         .hero-content h1 {
@@ -507,13 +567,15 @@
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
+                display: none;
+            }
 
             .mobile-menu-toggle {
                 display: block;
             }
 
             .mobile-menu {
-                display: block;
+                display: none;
             }
 
             .cta-button {
@@ -521,9 +583,8 @@
             }
 
             .hero {
-                padding-top: 80px;
-            }
-                display: none;
+                padding-top: 120px;
+                height: 60vh;
             }
 
             .processus-timeline::before {
@@ -543,10 +604,6 @@
             .processus-number {
                 left: 30px;
                 transform: translateY(-50%);
-            }
-
-            .hero {
-                height: 60vh;
             }
         }
     </style>
@@ -572,7 +629,27 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
                 <a href="contact.html" class="cta-button">Réserver un Chiot</a>
+            </nav>
+        </div>
+        
+        <!-- Menu Mobile -->
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul>
+                <li><a href="index.html" onclick="toggleMobileMenu()">Accueil</a></li>
+                <li><a href="reproducteurs.html" onclick="toggleMobileMenu()">Reproducteurs</a></li>
+                <li><a href="chiots.html" onclick="toggleMobileMenu()">Chiots</a></li>
+                <li><a href="elevage.html" class="active" onclick="toggleMobileMenu()">Élevage</a></li>
+                <li><a href="contact.html" onclick="toggleMobileMenu()">Contact</a></li>
+            </ul>
+        </div>
             </nav>
         </div>
     </header>
@@ -1011,6 +1088,26 @@
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
+        });
+
+        // Menu mobile
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu.style.display === 'flex') {
+                mobileMenu.style.display = 'none';
+            } else {
+                mobileMenu.style.display = 'flex';
+            }
+        }
+
+        // Fermer le menu mobile en cliquant à l'extérieur
+        document.addEventListener('click', function(e) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                mobileMenu.style.display = 'none';
+            }
         });
     </script>
 </body>
