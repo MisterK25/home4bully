@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home4Bully Swiss Prestige 🇨🇭 - Élevage American Bully XL Suisse</title>
+    <meta name="description" content="Élevage familial d'American Bully XL en Suisse. Chiens athlétiques, musclés et mentalement stables. Chiots disponibles octobre 2025.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --gold: #d4af37;
+            --black: #1a1a1a;
+            --cream: #f8f6f0;
+            --beige: #c8b99c;
+            --anthracite: #4a4a4a;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 90px;
+            width: auto;
+        }
+
+        .logo-text h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: var(--cream);
+            margin: 0;
+        }
+
+        .logo-text p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            color: var(--gold);
+            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--gold);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--gold);
+            color: var(--black);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.5)), url('https://d1yei2z3i6k35z.cloudfront.net/3998259/68b2a2ad42cfc_PRO03950.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--cream);
+        }
+
+        .hero-content h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content .tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: var(--gold);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .hero-content .description {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--black);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--cream);
+            padding: 15px 30px;
+            border: 2px solid var(--cream);
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--cream);
+            color: var(--black);
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--anthracite);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .bg-cream {
+            background: var(--cream);
+        }
+
+        .bg-beige {
+            background: var(--beige);
+        }
+
+        /* Portée Info */
+        .portee-info {
+            background: var(--beige);
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 4rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .portee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .portee-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        .portee-item p {
+            font-size: 1.1rem;
+            color: var(--anthracite);
+        }
+
+        .portee-item .highlight {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        /* Reproducteurs */
+        .reproducteurs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .reproducteur-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .reproducteur-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .reproducteur-image {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .reproducteur-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--gold);
+            color: var(--black);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .reproducteur-content {
+            padding: 2rem;
+        }
+
+        .reproducteur-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .reproducteur-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat {
+            background: var(--cream);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--anthracite);
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-value {
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        /* Galerie Élevage */
+        .elevage-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .elevage-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .elevage-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Menu Mobile */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--cream);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--black);
+            z-index: 1001;
+            padding: 6rem 2rem 2rem;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 1rem;
+        }
+
+        .mobile-menu a {
+            color: var(--cream);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 1.2rem;
+            display: block;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--anthracite);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover, .mobile-menu a.active {
+            color: var(--gold);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            color: var(--cream);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .reproducteurs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reproducteur-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <img src="https://d1yei2z3i6k35z.cloudfront.net/3998259/68b2a2883287c_logo.png" alt="Home4Bully Swiss Prestige">
+                    <div class="logo-text">
+                        <h1>HOME4BULLY</h1>
+                        <p>SWISS PRESTIGE 🇨🇭</p>
+                    </div>
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="reproducteurs.html">Reproducteurs</a></li>
+                    <li><a href="chiots.html">Chiots</a></li>
+                    <li><a href="elevage.html">Élevage</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <a href="contact.html" class="cta-button">Réserver un Chiot</a>
+            </nav>
+        </div>
+        
+        <!-- Menu Mobile -->
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul>
+                <li><a href="index.html" class="active" onclick="toggleMobileMenu()">Accueil</a></li>
+                <li><a href="reproducteurs.html" onclick="toggleMobileMenu()">Reproducteurs</a></li>
+                <li><a href="chiots.html" onclick="toggleMobileMenu()">Chiots</a></li>
+                <li><a href="elevage.html" onclick="toggleMobileMenu()">Élevage</a></li>
+                <li><a href="contact.html" onclick="toggleMobileMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Home4Bully Swiss Prestige 🇨🇭</h1>
+            <p class="tagline">"Des chiens athlétiques, musclés et mentalement stables"</p>
+            <p class="description">
+                Élevage familial suisse d'American Bully XL issus de chiens athlétiques et médicalement surveillés. 
+                Nos chiens sont musclés, robustes, énergiques et surtout mentalement très stables. 
+                Ce sont des chiens de famille élevés dans un élevage familial où ils ont été socialisés 
+                depuis leur naissance à tous les environnements.
+            </p>
+            <div class="hero-buttons">
+                <a href="chiots.html" class="btn-primary">
+                    Découvrir nos Chiots
+                    <i class="fas fa-heart"></i>
+                </a>
+                <a href="reproducteurs.html" class="btn-secondary">
+                    Nos Reproducteurs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Portée Actuelle -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Portée Disponible - Octobre 2025</h2>
+            <p class="section-subtitle">
+                9 chiots exceptionnels nés le 3 août 2025, disponibles à partir du 3 octobre 2025
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: center; margin-bottom: 3rem;">
+                <div style="padding: 2rem; background: var(--white); border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                    <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 1rem; color: var(--black);">Parents d'Exception</h3>
+                    <p style="color: var(--anthracite);">Nino (Tricolore Chocolat Merle) x Rell (Tricolore Lilac)</p>
+                </div>
+                <div style="padding: 2rem; background: var(--white); border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                    <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 1rem; color: var(--black);">7 Chiots Disponibles</h3>
+                    <p style="color: var(--anthracite);">2 déjà réservés sur 9</p>
+                </div>
+                <div style="padding: 2rem; background: var(--white); border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                    <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 1rem; color: var(--black);">Santé Garantie</h3>
+                    <p style="color: var(--anthracite);">Pucés, vaccinés, vermifugés + passeport</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Reproducteurs -->
+    <section class="section bg-cream">
+        <div class="container">
+            <h2 class="section-title">Nos Reproducteurs d'Exception</h2>
+            <p class="section-subtitle">
+                Découvrez Nino et Rell, nos reproducteurs sélectionnés pour leur excellence génétique, 
+                leur caractère équilibré et leur santé parfaite.
+            </p>
+            
+            <div class="reproducteurs-grid">
+                <!-- Nino -->
+                <div class="reproducteur-card">
+                    <div class="reproducteur-image" style="background-image: url('https://d1yei2z3i6k35z.cloudfront.net/3998259/68b2a5e853de7_PRO03588-min.jpg')">
+                        <div class="reproducteur-badge">Reproducteur</div>
+                    </div>
+                    <div class="reproducteur-content">
+                        <h3 class="reproducteur-name">NINO</h3>
+                        <div class="reproducteur-stats">
+                            <div class="stat">
+                                <div class="stat-label">Âge</div>
+                                <div class="stat-value">2 ans</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-label">Taille</div>
+                                <div class="stat-value">60 cm</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-label">Poids</div>
+                                <div class="stat-value">40 kg</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-label">Couleur</div>
+                                <div class="stat-value">Tricolore Chocolat Merle</div>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 1.5rem; color: var(--anthracite);">
+                            Nino est très athlétique et affectueux. Il se démarque par sa couleur exceptionnelle 
+                            tricolore chocolat merle et ses yeux veyron très rares. En parfaite santé, 
+                            il reproduit déjà de belles lignées.
+                        </p>
+                        <a href="reproducteurs.html" class="btn-primary" style="width: 100%; justify-content: center;">
+                            Voir Nino en Détail
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Rell -->
+                <div class="reproducteur-card">
+                    <div class="reproducteur-image" style="background-image: url('https://d1yei2z3i6k35z.cloudfront.net/3998259/68b2acafb1977_PRO03143-2-min.jpg')">
+                        <div class="reproducteur-badge" style="background: #f59e0b;">Reproductrice</div>
+                    </div>
+                    <div class="reproducteur-content">
+                        <h3 class="reproducteur-name">RELL</h3>
+                        <div class="reproducteur-stats">
+                            <div class="stat">
+                                <div class="stat-label">Âge</div>
+                                <div class="stat-value">2.5 ans</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-label">Taille</div>
+                                <div class="stat-value">53 cm</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-label">Poids</div>
+                                <div class="stat-value">30 kg</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-label">Couleur</div>
+                                <div class="stat-value">Tricolore Lilac</div>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 1.5rem; color: var(--anthracite);">
+                            Rell est une chienne tricolore lilac très musclée et athlétique. Rapide, joueuse, 
+                            très câline et gardienne de son foyer. Issue de la lignée Bossy, le plus gros élevage 
+                            des États-Unis. Instinct maternel exceptionnel.
+                        </p>
+                        <a href="reproducteurs.html" class="btn-primary" style="width: 100%; justify-content: center;">
+                            Voir Rell en Détail
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie Élevage -->
+    <section class="section bg-beige">
+        <div class="container">
+            <h2 class="section-title">Notre Élevage Familial</h2>
+            <p class="section-subtitle">
+                Découvrez l'environnement familial et aimant dans lequel grandissent nos chiots
+            </p>
+            
+            <div class="elevage-gallery">
+                <div class="elevage-image" style="background-image: url('https://d1yei2z3i6k35z.cloudfront.net/3998259/68b2a1c27ff9c_PRO03952.jpeg')"></div>
+                <div class="elevage-image" style="background-image: url('https://d1yei2z3i6k35z.cloudfront.net/3998259/68b2a2ad42cfc_PRO03950.jpeg')"></div>
+                <div class="elevage-image" style="background-image: url('https://d1yei2z3i6k35z.cloudfront.net/3998259/68b2a2d4a4efc_PRO03870.jpeg')"></div>
+                <div class="elevage-image" style="background-image: url('https://d1yei2z3i6k35z.cloudfront.net/3998259/68b2a2f71f03f_PRO03872.jpeg')"></div>
+                <div class="elevage-image" style="background-image: url('https://d1yei2z3i6k35z.cloudfront.net/3998259/68b2a3af9762f_PRO03601.jpg')"></div>
+                <div class="elevage-image" style="background-image: url('https://d1yei2z3i6k35z.cloudfront.net/3998259/68b2a63c02dd3_PRO03614.jpg')"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="section" style="background: var(--black); color: var(--cream);">
+        <div class="container">
+            <div style="text-align: center;">
+                <h2 style="color: var(--cream); margin-bottom: 1rem;">Prêt à Adopter ?</h2>
+                <p style="margin-bottom: 2rem; opacity: 0.9; font-size: 1.1rem;">
+                    Contactez-nous pour découvrir nos chiots disponibles et réserver votre futur compagnon
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="chiots.html" class="btn-primary">
+                        Voir nos Chiots
+                        <i class="fas fa-heart"></i>
+                    </a>
+                    <a href="tel:+41799362221" class="btn-primary" style="background: #25d366;">
+                        Appeler : +41 79 936 22 21
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Menu mobile
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const body = document.body;
+            
+            mobileMenu.classList.toggle('active');
+            
+            // Empêcher le scroll du body quand le menu est ouvert
+            if (mobileMenu.classList.contains('active')) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = '';
+            }
+        }
+
+        // Fermer le menu si on clique en dehors
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                if (mobileMenu.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
