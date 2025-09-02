@@ -469,6 +469,11 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Correction pour l'image de Rell */
+        .rell-image {
+            object-position: top center; /* Ajuste le cadrage pour montrer la tête du chien */
+        }
     </style>
 </head>
 <body>
@@ -609,9 +614,9 @@
                     </div>
                 </div>
 
-                <!-- Rell -->
+                <!-- Rell - Correction de l'image -->
                 <div class="reproducteur-card">
-                    <div class="reproducteur-image" style="background-image: url('https://d1yei2z3i6k35z.cloudfront.net/3998259/68b2acafb1977_PRO03143-2-min.jpg')">
+                    <div class="reproducteur-image" style="background-image: url('https://d1yei2z3i6k35z.cloudfront.net/3998259/68b2acafb1977_PRO03143-2-min.jpg'); background-position: top center;">
                         <div class="reproducteur-badge" style="background: #f59e0b;">Reproductrice</div>
                     </div>
                     <div class="reproducteur-content">
@@ -704,13 +709,17 @@
             });
         });
 
-        // Menu mobile
+        // Menu mobile - Correction pour l'affichage
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
-            if (mobileMenu.style.display === 'flex') {
+            const isOpen = mobileMenu.style.display === 'flex';
+            
+            if (isOpen) {
                 mobileMenu.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Réactive le défilement
             } else {
                 mobileMenu.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Empêche le défilement quand le menu est ouvert
             }
         }
 
@@ -719,11 +728,22 @@
             const mobileMenu = document.getElementById('mobileMenu');
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             
-            if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+            if (mobileMenu.style.display === 'flex' && !mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
                 mobileMenu.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Réactive le défilement
+            }
+        });
+
+        // Fermer le menu mobile en appuyant sur la touche Échap
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const mobileMenu = document.getElementById('mobileMenu');
+                if (mobileMenu.style.display === 'flex') {
+                    mobileMenu.style.display = 'none';
+                    document.body.style.overflow = 'auto'; // Réactive le défilement
+                }
             }
         });
     </script>
 </body>
 </html>
-
