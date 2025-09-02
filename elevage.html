@@ -170,11 +170,15 @@
             right: 0;
             bottom: 0;
             background: rgba(26, 26, 26, 0.98);
-            z-index: 1001;
+            z-index: 2000;
             padding: 2rem;
             align-items: center;
             justify-content: center;
             flex-direction: column;
+        }
+
+        .mobile-menu.active {
+            display: flex;
         }
 
         .mobile-menu-close {
@@ -1090,23 +1094,19 @@
             observer.observe(el);
         });
 
-        // Menu mobile
+        // Menu mobile (lock scroll + active class)
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
-            if (mobileMenu.style.display === 'flex') {
-                mobileMenu.style.display = 'none';
-            } else {
-                mobileMenu.style.display = 'flex';
-            }
+            const isActive = mobileMenu.classList.toggle('active');
+            document.body.style.overflow = isActive ? 'hidden' : '';
         }
 
         // Fermer le menu mobile en cliquant à l'extérieur
         document.addEventListener('click', function(e) {
             const mobileMenu = document.getElementById('mobileMenu');
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            
-            if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                mobileMenu.style.display = 'none';
+            if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                toggleMobileMenu();
             }
         });
     </script>
